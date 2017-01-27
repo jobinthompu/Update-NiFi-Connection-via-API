@@ -47,7 +47,9 @@ curl -i -X GET http://localhost:8080/nifi-api/connections/dcbee9dd-0159-1000-45a
 ```
 ![alt tag](https://github.com/jobinthompu/Update-NiFi-Connection-via-API/blob/master/Images/remove_this_element.jpg)
 
-4) Once updated, run the PUT REST API call from command line using curl as below:
+##  Updating Destination with  PUT REST calls
+
+1) Once updated, run the PUT REST API call from command line using curl as below:
 
 ```
 curl -i -X PUT -H 'Content-Type: application/json'  -d  '{ **MY UPDATED JSON**}' http://localhost:8080/nifi-api/connections/dcbee9dd-0159-1000-45a7-8306c28f2786
@@ -133,7 +135,7 @@ curl -i -X PUT -H 'Content-Type: application/json'  -d  '{
 
 ```
 
-5) Once you execute the above, if the update is successful, you will get below result:
+2) Once you execute the above, if the update is successful, you will get below result:
 
 ```
 HTTP/1.1 200 OK
@@ -147,7 +149,7 @@ Result will be similar as below:
 
 ![alt tag](https://github.com/jobinthompu/Update-NiFi-Connection-via-API/blob/master/Images/Curl_Result.jpg)
 
-6) Now login Back to the NiFi UI and make sure the change is done:
+3) Now login Back to the NiFi UI and make sure the change is done:
 
 ![alt tag](https://github.com/jobinthompu/Update-NiFi-Connection-via-API/blob/master/Images/data_flow_after.jpg)
 
