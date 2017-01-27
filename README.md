@@ -10,7 +10,8 @@ Using NiFi REST Api we can change the flow, here in this article I am trying to 
 
 ## Prerequisites
 
-1) Make sure HDF-2.x version of NiFi is up an running
+1) To test this, Make sure HDF-2.x version of NiFi is up an running
+
 2) Minimum 3 processors are on the canvas with connection like below:
 
 ![alt tag](https://github.com/jobinthompu/Update-NiFi-Connection-via-API/blob/master/Images/data_flow_before.jpg)
