@@ -1,4 +1,4 @@
-# Update-NiFi-Connection-via-API
+# Update NiFi Connection via API
 
 ## Short Description
 
@@ -47,3 +47,88 @@ curl -i -X GET http://localhost:8080/nifi-api/connections/dcbee9dd-0159-1000-45a
 ```
 ![alt tag](https://github.com/jobinthompu/Update-NiFi-Connection-via-API/blob/master/Images/remove_this_element.jpg)
 
+4) Once updated, run the PUT REST API call from command line using curl as below:
+
+```
+curl -i -X PUT -H 'Content-Type: application/json'  -d  '{ **MY UPDATED JSON**}' http://localhost:8080/nifi-api/connections/dcbee9dd-0159-1000-45a7-8306c28f2786
+```
+My Sample command is as below:
+
+```
+curl -i -X PUT -H 'Content-Type: application/json'  -d  '{
+	"revision": {
+		"clientId": "dd1c2f03-0159-1000-845b-d5c732a49869",
+		"version": 15
+	},
+	"id": "dcbee9dd-0159-1000-45a7-8306c28f2786",
+	"uri": "http://localhost:8080/nifi-api/connections/dcbee9dd-0159-1000-45a7-8306c28f2786",
+	"component": {
+		"id": "dcbee9dd-0159-1000-45a7-8306c28f2786",
+		"parentGroupId": "cbe6e53b-0158-1000-e36a-f9d26bb1b510",
+		"source": {
+			"id": "dcbea89f-0159-1000-278c-cc38bab689bf",
+			"type": "PROCESSOR",
+			"groupId": "cbe6e53b-0158-1000-e36a-f9d26bb1b510",
+			"name": "GenerateFlowFile",
+			"running": false,
+			"comments": ""
+		},
+		"destination": {
+			"id": "dcbebd86-0159-1000-7559-d77d1e05c910",
+			"type": "PROCESSOR",
+			"groupId": "cbe6e53b-0158-1000-e36a-f9d26bb1b510",
+			"name": "PutFile",
+			"running": false,
+			"comments": ""
+		},
+		"name": "",
+		"labelIndex": 1,
+		"zIndex": 0,
+		"selectedRelationships": ["success"],
+		"availableRelationships": ["success"],
+		"backPressureObjectThreshold": 10000,
+		"backPressureDataSizeThreshold": "1 GB",
+		"flowFileExpiration": "0 sec",
+		"prioritizers": [],
+		"bends": []
+	},
+	"status": {
+		"id": "dcbee9dd-0159-1000-45a7-8306c28f2786",
+		"groupId": "cbe6e53b-0158-1000-e36a-f9d26bb1b510",
+		"name": "success",
+		"statsLastRefreshed": "09:02:22 EST",
+		"sourceId": "dcbea89f-0159-1000-278c-cc38bab689bf",
+		"sourceName": "GenerateFlowFile",
+		"destinationId": "dcbebd86-0159-1000-7559-d77d1e05c910",
+		"destinationName": "PutFile",
+		"aggregateSnapshot": {
+			"id": "dcbee9dd-0159-1000-45a7-8306c28f2786",
+			"groupId": "cbe6e53b-0158-1000-e36a-f9d26bb1b510",
+			"name": "success",
+			"sourceName": "GenerateFlowFile",
+			"destinationName": "PutFile",
+			"flowFilesIn": 0,
+			"bytesIn": 0,
+			"input": "0 (0 bytes)",
+			"flowFilesOut": 0,
+			"bytesOut": 0,
+			"output": "0 (0 bytes)",
+			"flowFilesQueued": 18,
+			"bytesQueued": 18,
+			"queued": "18 (18 bytes)",
+			"queuedSize": "18 bytes",
+			"queuedCount": "18"
+		}
+	},
+	"bends": [],
+	"labelIndex": 1,
+	"zIndex": 0,
+	"sourceId": "dcbea89f-0159-1000-278c-cc38bab689bf",
+	"sourceGroupId": "cbe6e53b-0158-1000-e36a-f9d26bb1b510",
+	"sourceType": "PROCESSOR",
+	"destinationId": "dcbebd86-0159-1000-7559-d77d1e05c910",
+	"destinationGroupId": "cbe6e53b-0158-1000-e36a-f9d26bb1b510",
+	"destinationType": "PROCESSOR"
+}' http://localhost:8080/nifi-api/connections/dcbee9dd-0159-1000-45a7-8306c28f2786
+
+```
