@@ -2,7 +2,7 @@
 
 ## Short Description
 
-Recently a customer asked me how to change destinate of a connection which still contains data, but the destination is stopped, I am trying to capture the steps to do the same from command line.
+Recently a customer asked me how to change destination of a connection which still contains data, but the destination is stopped, I am trying to capture the steps to do the same from command line.
 
 ## Introduction
 
