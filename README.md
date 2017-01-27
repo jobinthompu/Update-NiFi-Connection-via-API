@@ -2,7 +2,7 @@
 
 ## Short Description
 
-Recently a customer asked me how to change destinate of a connection which still contains data, but the destination is stopped, I am trying to demonstrate the same from command line.
+Recently a customer asked me how to change destinate of a connection which still contains data, but the destination is stopped, I am trying to capture the steps to do the same from command line.
 
 ## Introduction
 
@@ -31,4 +31,19 @@ Using NiFi REST Api we can change the flow, here in this article I am trying to 
 curl -i -X GET http://localhost:8080/nifi-api/connections/dcbee9dd-0159-1000-45a7-8306c28f2786 
 ```
 
-2) 
+2) Now Copy the result of the GET curl command and update the below section with uuid of the 'PutNext' processor.
+
+```
+"destination":{"id":
+"destinationId":"
+"destinationId":
+```
+![alt tag](https://github.com/jobinthompu/Update-NiFi-Connection-via-API/blob/master/Images/Changes_required.jpg)
+
+3) Remove the below json element from the copied result:
+
+```
+"permissions":{"canRead":true,"canWrite":true},
+```
+![alt tag](https://github.com/jobinthompu/Update-NiFi-Connection-via-API/blob/master/Images/remove_this_element.jpg)
+
