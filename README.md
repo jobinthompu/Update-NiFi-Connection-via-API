@@ -6,7 +6,7 @@ Recently a customer asked me how to change destinate of a connection which still
 
 ## Introduction
 
-Using NiFi REST Api we can change the flow, here in this article I am trying to capture steps to update destination of a connection using REST API.
+Using NiFi REST Api we can change the flow, here in this article I am trying to capture steps to update destination of a connection using REST API. The requirement around this was to push incoming data to different flows on a timely manner.
 
 ## Prerequisites
 
@@ -132,3 +132,32 @@ curl -i -X PUT -H 'Content-Type: application/json'  -d  '{
 }' http://localhost:8080/nifi-api/connections/dcbee9dd-0159-1000-45a7-8306c28f2786
 
 ```
+
+5) Once you execute the above, if the update is successful, you will get below result:
+
+```
+HTTP/1.1 200 OK
+Date: Fri, 27 Jan 2017 14:59:37 GMT
+Cache-Control: private, no-cache, no-store, no-transform
+Content-Type: application/json
+Transfer-Encoding: chunked
+Server: Jetty(9.3.9.v20160517)
+```
+Result will be similar as below:
+
+![alt tag](https://github.com/jobinthompu/Update-NiFi-Connection-via-API/blob/master/Images/Curl_Result.jpg)
+
+6) Now login Back to the NiFi UI and make sure the change is done:
+
+![alt tag](https://github.com/jobinthompu/Update-NiFi-Connection-via-API/blob/master/Images/data_flow_after.jpg)
+
+
+### References:
+* [NiFi API](https://nifi.apache.org/docs/nifi-docs/rest-api/index.html)
+
+
+Thanks,
+
+Jobin George
+
+
